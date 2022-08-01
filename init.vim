@@ -25,12 +25,11 @@ Plug 'akinsho/toggleterm.nvim', {'tag' : 'v2.*'}
 
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'lewis6991/gitsigns.nvim'
+
+Plug 'folke/which-key.nvim'
 call plug#end()
 
 lua require("lsp_config")
-
-autocmd BufWritePre *.go lua vim.lsp.buf.formatting()
-autocmd BufWritePre *.go lua goimports(1000)
 
 " Find, Filter, Preview, Pick. All lua, all the time.
 " https://github.com/nvim-telescope/telescope.nvim
@@ -72,3 +71,10 @@ lua require("nvim-treesitter_config")
 set signcolumn=yes:1
 highlight clear SignColumn
 lua require("gitsigns_config")
+
+set mouse=nicr
+set mouse=a
+
+" Create key bindings that stick.
+" https://github.com/folke/which-key.nvim
+lua require("which-key_config")
