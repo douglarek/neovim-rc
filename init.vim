@@ -27,6 +27,10 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'lewis6991/gitsigns.nvim'
 
 Plug 'folke/which-key.nvim'
+
+Plug 'numToStr/Comment.nvim'
+
+Plug 'olexsmir/gopher.nvim'
 call plug#end()
 
 lua require("lsp_config")
@@ -78,3 +82,11 @@ set mouse=a
 " Create key bindings that stick.
 " https://github.com/folke/which-key.nvim
 lua require("which-key_config")
+
+" Smart and powerful comment plugin for neovim.
+" https://github.com/numToStr/Comment.nvim
+lua require('Comment').setup()
+
+" Neovim plugin for make golang development easiest
+" https://github.com/olexsmir/gopher.nvim
+lua require("gopher").setup()

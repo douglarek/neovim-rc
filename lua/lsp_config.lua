@@ -51,6 +51,7 @@ local on_attach = function(client, bufnr)
 end
 
 local util = require "lspconfig/util"
+-- gopls
 nvim_lsp.gopls.setup{
 	cmd = {'gopls', '-remote=auto'},
 	filetypes = {'go', 'gomod'},
@@ -70,8 +71,14 @@ nvim_lsp.gopls.setup{
 	on_attach = on_attach,
 }
 
+-- clangd
+nvim_lsp.clangd.setup{
+	capabilities = capabilities,
+	on_attach = on_attach,
+}
+
 vim.api.nvim_create_autocmd("BufWritePre", {
-	pattern = { "*.go" },
+	pattern = { "*.go" , "*.cpp", "*.cxx", "*.C", "*.h", "*.hpp"},
 	callback = function()
 		vim.lsp.buf.formatting_sync(nil, 3000)
 	end,
@@ -95,5 +102,3 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 		end
 	end,
 })
-
---vim.lsp.set_log_level('debug')
