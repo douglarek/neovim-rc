@@ -78,7 +78,7 @@ nvim_lsp.clangd.setup{
 }
 
 vim.api.nvim_create_autocmd("BufWritePre", {
-	pattern = { "*.go" , "*.cpp", "*.cxx", "*.C", "*.h", "*.hpp"},
+	pattern = { "*.go" , "*.cpp", "*.cxx", "*.C", "*.h", "*.hpp", "*.rs"},
 	callback = function()
 		vim.lsp.buf.formatting_sync(nil, 3000)
 	end,

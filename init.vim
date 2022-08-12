@@ -1,3 +1,6 @@
+if !exists('g:colors_name')
+	highlight Pmenu ctermbg=gray guibg=gray
+endif
 set cursorline
 
 call plug#begin()
@@ -8,7 +11,7 @@ Plug 'honza/vim-snippets'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim', { 'branch': 'master' }
 
-Plug 'kyazdani42/nvim-web-devicons' " optional, for file icons
+Plug 'kyazdani42/nvim-web-devicons'
 Plug 'kyazdani42/nvim-tree.lua'
 
 Plug 'hrsh7th/cmp-nvim-lsp'
@@ -31,9 +34,19 @@ Plug 'folke/which-key.nvim'
 Plug 'numToStr/Comment.nvim'
 
 Plug 'olexsmir/gopher.nvim'
+
+Plug 'simrat39/rust-tools.nvim'
+Plug 'mfussenegger/nvim-dap'
 call plug#end()
 
+" Quickstart configs for Nvim lsp
+" https://github.com/neovim/nvim-lspconfig
 lua require("lsp_config")
+" Set updatetime for CursorHold
+" 300ms of no cursor movement to trigger CursorHold
+set updatetime=300
+" Show diagnostic popup on cursor hold
+autocmd CursorHold * lua vim.diagnostic.open_float(nil, { focusable = false })
 
 " Find, Filter, Preview, Pick. All lua, all the time.
 " https://github.com/nvim-telescope/telescope.nvim
@@ -51,7 +64,8 @@ nnoremap <leader>wb <cmd>NvimTreeFocus<cr>
 
 " A completion plugin for neovim coded in Lua.
 " https://github.com/hrsh7th/nvim-cmp
-set completeopt=menu,menuone,noselect
+set completeopt=menuone,noinsert,noselect
+set shortmess+=c
 lua require("nvim-cmp_config")
 
 " Neovim motions on speed!
@@ -90,3 +104,7 @@ lua require('Comment').setup()
 " Neovim plugin for make golang development easiest
 " https://github.com/olexsmir/gopher.nvim
 lua require("gopher").setup()
+
+" Tools for better development in rust using neovim's builtin lsp
+" https://github.com/simrat39/rust-tools.nvim
+lua require("rust-tools_config")
