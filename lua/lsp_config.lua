@@ -102,3 +102,11 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 		end
 	end,
 })
+
+-- pyright
+-- $ yarn global add pyright
+-- add ~/.yarn/bin to path
+nvim_lsp.pyright.setup{
+    on_attach = on_attach,
+    flags = lsp_flags,
+}
