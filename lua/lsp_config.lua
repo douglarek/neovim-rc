@@ -110,3 +110,13 @@ nvim_lsp.pyright.setup{
     on_attach = on_attach,
     flags = lsp_flags,
 }
+
+-- rust
+nvim_lsp.rust_analyzer.setup{
+    on_attach = on_attach,
+    flags = lsp_flags,
+    -- Server-specific settings...
+    settings = {
+      ["rust-analyzer"] = {}
+    }
+}

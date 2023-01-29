@@ -1,6 +1,4 @@
-if !exists('g:colors_name')
-	highlight Pmenu ctermbg=gray guibg=gray
-endif
+colorscheme torte
 set cursorline
 
 call plug#begin()
@@ -34,9 +32,6 @@ Plug 'folke/which-key.nvim'
 Plug 'numToStr/Comment.nvim'
 
 Plug 'olexsmir/gopher.nvim'
-
-Plug 'simrat39/rust-tools.nvim'
-Plug 'mfussenegger/nvim-dap'
 call plug#end()
 
 " Quickstart configs for Nvim lsp
@@ -104,7 +99,3 @@ lua require('Comment').setup()
 " Neovim plugin for make golang development easiest
 " https://github.com/olexsmir/gopher.nvim
 lua require("gopher").setup()
-
-" Tools for better development in rust using neovim's builtin lsp
-" https://github.com/simrat39/rust-tools.nvim
-lua require("rust-tools_config")
