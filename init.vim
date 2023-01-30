@@ -32,6 +32,7 @@ Plug 'folke/which-key.nvim'
 Plug 'numToStr/Comment.nvim'
 
 Plug 'olexsmir/gopher.nvim'
+Plug 'simrat39/rust-tools.nvim'
 call plug#end()
 
 " Quickstart configs for Nvim lsp

@@ -107,16 +107,14 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 -- $ yarn global add pyright
 -- add ~/.yarn/bin to path
 nvim_lsp.pyright.setup{
-    on_attach = on_attach,
-    flags = lsp_flags,
+	on_attach = on_attach,
+	flags = lsp_flags,
 }
 
 -- rust
-nvim_lsp.rust_analyzer.setup{
-    on_attach = on_attach,
-    flags = lsp_flags,
-    -- Server-specific settings...
-    settings = {
-      ["rust-analyzer"] = {}
-    }
-}
+require("rust-tools").setup({
+	server = {
+		on_attach = on_attach,
+		capabilities = capabilities,
+	},
+})
