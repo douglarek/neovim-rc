@@ -1,9 +1,12 @@
+vim.o.timeout = true
+vim.o.timeoutlen = 300
 local wk = require("which-key")
 wk.setup {}
 wk.register({
 	["<leader>l"] = {
 		name = "+lsp",
-		R = { "<cmd>lua vim.lsp.buf.rename()<CR>", "Rename identities" },
+		r = { "<cmd>lua vim.lsp.buf.rename()<CR>", "Rename identities" },
+		o = { "<cmd>SymbolsOutline<CR>", "Show code outline" },
 	},
 })
 

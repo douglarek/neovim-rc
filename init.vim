@@ -9,8 +9,8 @@ Plug 'honza/vim-snippets'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim', { 'branch': 'master' }
 
-Plug 'kyazdani42/nvim-web-devicons'
-Plug 'kyazdani42/nvim-tree.lua'
+Plug 'nvim-tree/nvim-web-devicons'
+Plug 'nvim-tree/nvim-tree.lua'
 
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
@@ -31,9 +31,15 @@ Plug 'folke/which-key.nvim'
 
 Plug 'numToStr/Comment.nvim'
 
+Plug 'mfussenegger/nvim-dap'
 Plug 'olexsmir/gopher.nvim'
 Plug 'simrat39/rust-tools.nvim'
+Plug 'simrat39/symbols-outline.nvim'
 call plug#end()
+
+let g:loaded_ruby_provider = 0
+let g:loaded_node_provider = 0
+let g:loaded_perl_provider = 0
 
 " Quickstart configs for Nvim lsp
 " https://github.com/neovim/nvim-lspconfig
@@ -95,8 +101,19 @@ lua require("which-key_config")
 
 " Smart and powerful comment plugin for neovim.
 " https://github.com/numToStr/Comment.nvim
-lua require('Comment').setup()
+lua << EOF
+require('Comment').setup({
+	mappings = {
+		basic = false,
+		extra = false,
+	},
+})
+EOF
 
 " Neovim plugin for make golang development easiest
 " https://github.com/olexsmir/gopher.nvim
 lua require("gopher").setup()
+
+" A tree like view for symbols in Neovim using the Language Server Protocol. Supports all your favourite languages.
+" https://github.com/simrat39/symbols-outline.nvim
+lua require("symbols-outline").setup()
