@@ -12,11 +12,13 @@ Plug 'nvim-telescope/telescope.nvim', { 'branch': 'master' }
 Plug 'nvim-tree/nvim-web-devicons'
 Plug 'nvim-tree/nvim-tree.lua'
 
+Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-nvim-lua'
+Plug 'hrsh7th/cmp-nvim-lsp-signature-help'
 Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-cmdline'
-Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-vsnip'
 Plug 'hrsh7th/vim-vsnip'
 
@@ -66,8 +68,6 @@ nnoremap <leader>wb <cmd>NvimTreeFocus<cr>
 
 " A completion plugin for neovim coded in Lua.
 " https://github.com/hrsh7th/nvim-cmp
-set completeopt=menuone,noinsert,noselect
-set shortmess+=c
 lua require("nvim-cmp_config")
 
 " Neovim motions on speed!
