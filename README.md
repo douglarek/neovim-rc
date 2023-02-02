@@ -1,6 +1,4 @@
-# neovim-rc
-
-A self-use neovim only rc.
+# A neovim config for my own use
 
 ```
 $ mv ~/.config/nvim ~/.config/nvim.bak
