@@ -5,14 +5,41 @@ wk.setup {}
 wk.register({
 	["<leader>l"] = {
 		name = "+lsp",
-		r = { "<cmd>lua vim.lsp.buf.rename()<CR>", "Rename identities" },
-		o = { "<cmd>SymbolsOutline<CR>", "Show code outline" },
-	},
-})
-wk.register({
-	["<leader>w"] = {
-		name = "+NvimTree",
-		o = { "<cmd>NvimTreeOpen<CR>", "NvimTreeToggleOpen" },
+		r = { "<cmd>lua vim.lsp.buf.rename()<CR>", "rename identities" },
+		o = { "<cmd>SymbolsOutline<CR>", "show code outline" },
 	},
 })
 
+wk.register({
+	["<leader>f"] = {
+		name = "+tree",
+		o = { "<cmd>NvimTreeOpen<CR>", "open" },
+		t = { "<cmd>NvimTreeToggle<CR>", "toggle" },
+		f = { "<cmd>NvimTreeFocus<CR>", "focus" },
+	},
+})
+
+wk.register({
+	["<leader>s"] = {
+		name = "+telescope",
+		f = { "<cmd>Telescope find_files<CR>", "find files" },
+		g = { "<cmd>Telescope live_grep<CR>", "live grep" },
+		b = { "<cmd>Telescope buffers<CR>", "buffers" },
+		h = { "<cmd>Telescope help_tags<CR>", "help tags" },
+	},
+})
+
+wk.register({
+	["<leader>j"] = {
+		name = "+hop",
+		w = { "<cmd>HopWord<CR>", "hop word" },
+		l = { "<cmd>HopLine<CR>", "hop line" },
+	},
+})
+
+wk.register({
+	["<leader>t"] = {
+		name = "+term",
+		t = { "<cmd>ToggleTerm<CR>", "toggle terminal" },
+	},
+})

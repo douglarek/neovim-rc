@@ -36,6 +36,8 @@ Plug 'mfussenegger/nvim-dap'
 Plug 'olexsmir/gopher.nvim'
 Plug 'simrat39/rust-tools.nvim'
 Plug 'simrat39/symbols-outline.nvim'
+
+Plug 'folke/neodev.nvim'
 call plug#end()
 
 let g:loaded_ruby_provider = 0
@@ -51,19 +53,9 @@ set updatetime=300
 " Show diagnostic popup on cursor hold
 autocmd CursorHold * lua vim.diagnostic.open_float(nil, { focusable = false })
 
-" Find, Filter, Preview, Pick. All lua, all the time.
-" https://github.com/nvim-telescope/telescope.nvim
-nnoremap <leader>ff <cmd>Telescope find_files<cr>
-nnoremap <leader>fg <cmd>Telescope live_grep<cr>
-nnoremap <leader>fb <cmd>Telescope buffers<cr>
-nnoremap <leader>fh <cmd>Telescope help_tags<cr>
-
 " A File Explorer For Neovim Written In Lua
 " https://github.com/kyazdani42/nvim-tree.lua
 lua require("nvim-tree_config")
-" See default mapping: https://github.com/kyazdani42/nvim-tree.lua/blob/master/doc/nvim-tree-lua.txt#L1071
-nnoremap <leader>wm <cmd>NvimTreeToggle<cr>
-nnoremap <leader>wb <cmd>NvimTreeFocus<cr>
 
 " A completion plugin for neovim coded in Lua.
 " https://github.com/hrsh7th/nvim-cmp
@@ -72,13 +64,10 @@ lua require("nvim-cmp_config")
 " Neovim motions on speed!
 " https://github.com/phaazon/hop.nvim
 lua require("hop_config")
-nnoremap <leader>jw <cmd>HopWord<cr>
-nnoremap <leader>jl <cmd>HopLine<cr>
 
 " A neovim lua plugin to help easily manage multiple terminal windows
 " https://github.com/akinsho/toggleterm.nvim
 lua require("toggleterm_config")
-nnoremap <leader>tt <cmd>ToggleTerm<cr>
 
 " Nvim Treesitter configurations and abstraction layer
 " https://github.com/nvim-treesitter/nvim-treesitter

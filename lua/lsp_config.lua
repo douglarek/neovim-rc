@@ -104,3 +104,15 @@ require("rust-tools").setup({
 		capabilities = capabilities,
 	},
 })
+
+-- lua
+require("neodev").setup({})
+nvim_lsp.sumneko_lua.setup({
+  settings = {
+    Lua = {
+      completion = {
+        callSnippet = "Replace"
+      }
+    }
+  }
+})
