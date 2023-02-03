@@ -1,12 +1,12 @@
-vim.opt.completeopt = {'menuone', 'noselect', 'noinsert'}
-vim.opt.shortmess = vim.opt.shortmess + { c = true}
+vim.opt.completeopt = { 'menuone', 'noselect', 'noinsert' }
+vim.opt.shortmess = vim.opt.shortmess + { c = true }
 vim.api.nvim_set_option('updatetime', 300)
 vim.cmd([[
 set signcolumn=yes
 autocmd CursorHold * lua vim.diagnostic.open_float(nil, { focusable = false })
 ]])
 
-local cmp = require'cmp'
+local cmp = require 'cmp'
 local feedkey = function(key, mode)
 	vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes(key, true, true, true), mode, true)
 end
@@ -40,7 +40,7 @@ cmp.setup({
 			elseif vim.fn["vsnip#jumpable"](-1) == 1 then
 				feedkey("<Plug>(vsnip-jump-prev)", "")
 			end
-		end, { "i", "s"}),
+		end, { "i", "s" }),
 
 		['<C-S-f>'] = cmp.mapping.scroll_docs(-4),
 		['<C-f>'] = cmp.mapping.scroll_docs(4),
@@ -52,18 +52,18 @@ cmp.setup({
 		})
 	},
 	sources = {
-		{ name = 'path' },                              -- file paths
-		{ name = 'nvim_lsp', keyword_length = 2 },      -- from language server
-		{ name = 'nvim_lsp_signature_help'},            -- display function signatures with current parameter emphasized
-		{ name = 'nvim_lua', keyword_length = 2},       -- complete neovim's Lua runtime API such vim.lsp.*
-		{ name = 'buffer', keyword_length = 2 },        -- source current buffer
-		{ name = 'vsnip', keyword_length = 2 },         -- nvim-cmp source for vim-vsnip
-		{ name = 'calc'},                               -- source for math calculation
+		{ name = 'path' }, -- file paths
+		{ name = 'nvim_lsp', keyword_length = 2 }, -- from language server
+		{ name = 'nvim_lsp_signature_help' }, -- display function signatures with current parameter emphasized
+		{ name = 'nvim_lua', keyword_length = 2 }, -- complete neovim's Lua runtime API such vim.lsp.*
+		{ name = 'buffer', keyword_length = 2 }, -- source current buffer
+		{ name = 'vsnip', keyword_length = 2 }, -- nvim-cmp source for vim-vsnip
+		{ name = 'calc' }, -- source for math calculation
 	},
 	formatting = {
-		fields = {'menu', 'abbr', 'kind'},
+		fields = { 'menu', 'abbr', 'kind' },
 		format = function(entry, item)
-			local menu_icon ={
+			local menu_icon = {
 				nvim_lsp = 'λ',
 				vsnip = '⋗',
 				buffer = 'Ω',

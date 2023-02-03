@@ -3,8 +3,6 @@ set cursorline
 
 call plug#begin()
 Plug 'neovim/nvim-lspconfig'
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
 
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim', { 'branch': 'master' }
@@ -30,8 +28,6 @@ Plug 'lewis6991/gitsigns.nvim'
 
 Plug 'folke/which-key.nvim'
 
-Plug 'numToStr/Comment.nvim'
-
 Plug 'mfussenegger/nvim-dap'
 Plug 'olexsmir/gopher.nvim'
 Plug 'simrat39/rust-tools.nvim'
@@ -50,8 +46,6 @@ lua require("lsp_config")
 " Set updatetime for CursorHold
 " 300ms of no cursor movement to trigger CursorHold
 set updatetime=300
-" Show diagnostic popup on cursor hold
-autocmd CursorHold * lua vim.diagnostic.open_float(nil, { focusable = false })
 
 " A File Explorer For Neovim Written In Lua
 " https://github.com/kyazdani42/nvim-tree.lua
@@ -63,7 +57,7 @@ lua require("nvim-cmp_config")
 
 " Neovim motions on speed!
 " https://github.com/phaazon/hop.nvim
-lua require("hop_config")
+lua require("hop").setup()
 
 " A neovim lua plugin to help easily manage multiple terminal windows
 " https://github.com/akinsho/toggleterm.nvim
@@ -86,17 +80,6 @@ set mouse=a
 " Create key bindings that stick.
 " https://github.com/folke/which-key.nvim
 lua require("which-key_config")
-
-" Smart and powerful comment plugin for neovim.
-" https://github.com/numToStr/Comment.nvim
-lua << EOF
-require('Comment').setup({
-	mappings = {
-		basic = false,
-		extra = false,
-	},
-})
-EOF
 
 " Neovim plugin for make golang development easiest
 " https://github.com/olexsmir/gopher.nvim
