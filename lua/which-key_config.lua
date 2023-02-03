@@ -9,4 +9,10 @@ wk.register({
 		o = { "<cmd>SymbolsOutline<CR>", "Show code outline" },
 	},
 })
+wk.register({
+	["<leader>w"] = {
+		name = "+NvimTree",
+		o = { "<cmd>NvimTreeOpen<CR>", "NvimTreeToggleOpen" },
+	},
+})
 
