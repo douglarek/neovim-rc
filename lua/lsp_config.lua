@@ -39,28 +39,28 @@ end
 local util = require "lspconfig/util"
 -- gopls
 nvim_lsp.gopls.setup {
-	cmd = { 'gopls', '-remote=auto' },
-	filetypes = { 'go', 'gomod' },
-	root_dir = util.root_pattern('go.work', 'go.mod', '.git'),
-	-- for postfix snippets and analyzers
-	capabilities = capabilities,
-	settings = {
-		gopls = {
-			experimentalPostfixCompletions = true,
-			analyses = {
-				unusedparams = true,
-				shadow = true,
-			},
-			staticcheck = true,
-		},
-	},
-	on_attach = on_attach,
+    cmd = { 'gopls', '-remote=auto' },
+    filetypes = { 'go', 'gomod' },
+    root_dir = util.root_pattern('go.work', 'go.mod', '.git'),
+    -- for postfix snippets and analyzers
+    capabilities = capabilities,
+    settings = {
+        gopls = {
+            experimentalPostfixCompletions = true,
+            analyses = {
+                unusedparams = true,
+                shadow = true,
+            },
+            staticcheck = true,
+        },
+    },
+    on_attach = on_attach,
 }
 
 -- clangd
 nvim_lsp.clangd.setup {
-	capabilities = capabilities,
-	on_attach = on_attach,
+    capabilities = capabilities,
+    on_attach = on_attach,
 }
 
 vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.formatting_sync(nil, 3000)]]
@@ -70,25 +70,25 @@ vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.formatting_sync(nil, 3000)]]
 -- $ yarn global add pyright
 -- add ~/.yarn/bin to path
 nvim_lsp.pyright.setup {
-	on_attach = on_attach,
+    on_attach = on_attach,
 }
 
 -- rust
 require("rust-tools").setup({
-	server = {
-		on_attach = on_attach,
-		capabilities = capabilities,
-	},
+    server = {
+        on_attach = on_attach,
+        capabilities = capabilities,
+    },
 })
 
 -- lua
 require("neodev").setup({})
-nvim_lsp.sumneko_lua.setup({
-	settings = {
-		Lua = {
-			completion = {
-				callSnippet = "Replace"
-			}
-		}
-	}
+nvim_lsp.lua_ls.setup({
+    settings = {
+        Lua = {
+            completion = {
+                callSnippet = "Replace"
+            }
+        }
+    }
 })
