@@ -21,7 +21,7 @@ Plug 'hrsh7th/vim-vsnip'
 
 Plug 'phaazon/hop.nvim'
 
-Plug 'akinsho/toggleterm.nvim', {'tag' : 'v2.*'}
+Plug 'akinsho/toggleterm.nvim'
 
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'lewis6991/gitsigns.nvim'
