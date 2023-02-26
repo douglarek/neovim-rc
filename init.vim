@@ -34,6 +34,8 @@ Plug 'simrat39/rust-tools.nvim'
 Plug 'simrat39/symbols-outline.nvim'
 
 Plug 'folke/neodev.nvim'
+Plug 'williamboman/mason.nvim'
+Plug 'williamboman/mason-lspconfig.nvim'
 call plug#end()
 
 let g:loaded_ruby_provider = 0
@@ -88,3 +90,9 @@ lua require("gopher").setup()
 " A tree like view for symbols in Neovim using the Language Server Protocol. Supports all your favourite languages.
 " https://github.com/simrat39/symbols-outline.nvim
 lua require("symbols-outline").setup()
+
+" Portable package manager for Neovim that runs everywhere Neovim runs. Easily install and manage LSP servers, DAP servers, linters, and formatters.
+" https://github.com/williamboman/mason.nvim
+lua require("mason_config")
+
+lua require("mason").setup()
