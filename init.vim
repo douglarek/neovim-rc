@@ -94,5 +94,3 @@ lua require("symbols-outline").setup()
 " Portable package manager for Neovim that runs everywhere Neovim runs. Easily install and manage LSP servers, DAP servers, linters, and formatters.
 " https://github.com/williamboman/mason.nvim
 lua require("mason_config")
-
-lua require("mason").setup()
