@@ -66,11 +66,15 @@ nvim_lsp.clangd.setup {
 vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format(nil, 3000)]]
 -- vim.cmd [[autocmd BufWritePre *.go lua vim.lsp.buf.code_action({ source = { organizeImports = true } })]]
 
--- pyright
--- $ yarn global add pyright
--- add ~/.yarn/bin to path
-nvim_lsp.pyright.setup {
+-- pylsp
+-- change ~/.local/share/nvim/mason/packages/python-lsp-server/venv/pyvenv.cfg:
+-- include-system-site-packages = true
+-- for completions 3rd party modules
+nvim_lsp.pylsp.setup {
   on_attach = on_attach,
+  settings = {
+    formatCommand = { "black" }
+  }
 }
 
 -- rust
