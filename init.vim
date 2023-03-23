@@ -36,6 +36,8 @@ Plug 'simrat39/symbols-outline.nvim'
 Plug 'folke/neodev.nvim'
 Plug 'williamboman/mason.nvim'
 Plug 'williamboman/mason-lspconfig.nvim'
+
+Plug 'aduros/ai.vim'
 call plug#end()
 
 let g:loaded_ruby_provider = 0
