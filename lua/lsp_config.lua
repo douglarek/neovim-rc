@@ -73,7 +73,15 @@ vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format(nil, 3000)]]
 nvim_lsp.pylsp.setup {
   on_attach = on_attach,
   settings = {
-    formatCommand = { "black" }
+    pylsp = {
+      plugins = {
+        black = { enabled = true },
+        isort = { enabled = true, profile = "black" },
+        pycodestyle = {
+          maxLineLength = 119
+        }
+      }
+    }
   }
 }
 
