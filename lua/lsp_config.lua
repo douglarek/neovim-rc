@@ -77,6 +77,7 @@ nvim_lsp.pylsp.setup {
       plugins = {
         black = { enabled = true },
         isort = { enabled = true, profile = "black" },
+        rope_autoimport = { enabled = true },
         pycodestyle = {
           maxLineLength = 119
         }
