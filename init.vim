@@ -23,7 +23,7 @@ Plug 'phaazon/hop.nvim'
 
 Plug 'akinsho/toggleterm.nvim'
 
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'lewis6991/gitsigns.nvim'
 
 Plug 'folke/which-key.nvim'
@@ -34,8 +34,6 @@ Plug 'simrat39/rust-tools.nvim'
 Plug 'simrat39/symbols-outline.nvim'
 
 Plug 'folke/neodev.nvim'
-Plug 'williamboman/mason.nvim'
-Plug 'williamboman/mason-lspconfig.nvim'
 
 Plug 'aduros/ai.vim'
 call plug#end()
@@ -92,7 +90,3 @@ lua require("gopher").setup()
 " A tree like view for symbols in Neovim using the Language Server Protocol. Supports all your favourite languages.
 " https://github.com/simrat39/symbols-outline.nvim
 lua require("symbols-outline").setup()
-
-" Portable package manager for Neovim that runs everywhere Neovim runs. Easily install and manage LSP servers, DAP servers, linters, and formatters.
-" https://github.com/williamboman/mason.nvim
-lua require("mason_config")

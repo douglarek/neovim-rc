@@ -1,7 +1,7 @@
-require("nvim-treesitter.install").prefer_git = false
+require 'nvim-treesitter.install'.compilers = { 'zig' }
 require 'nvim-treesitter.configs'.setup {
   -- A list of parser names, or "all"
-  ensure_installed = "all",
+  ensure_installed = { "lua", "go", "rust", "sql", "yaml" },
 
   -- Install parsers synchronously (only applied to `ensure_installed`)
   sync_install = false,
@@ -10,7 +10,7 @@ require 'nvim-treesitter.configs'.setup {
   auto_install = true,
 
   -- List of parsers to ignore installing (for "all")
-  ignore_install = { "ruby" },
+  ignore_install = {},
 
   highlight = {
     -- `false` will disable the whole extension
