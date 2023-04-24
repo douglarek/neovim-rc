@@ -1,7 +1,7 @@
 require 'nvim-treesitter.install'.compilers = { 'zig' }
 require 'nvim-treesitter.configs'.setup {
   -- A list of parser names, or "all"
-  ensure_installed = { "lua", "go", "rust", "sql", "yaml" },
+  ensure_installed = { "lua", "go", "rust", "sql", "yaml", "python", "toml" },
 
   -- Install parsers synchronously (only applied to `ensure_installed`)
   sync_install = false,
