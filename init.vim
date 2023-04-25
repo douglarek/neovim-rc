@@ -36,6 +36,7 @@ Plug 'simrat39/symbols-outline.nvim'
 Plug 'folke/neodev.nvim'
 
 Plug 'aduros/ai.vim'
+Plug 'github/copilot.vim'
 call plug#end()
 
 let g:loaded_ruby_provider = 0
@@ -90,3 +91,7 @@ lua require("gopher").setup()
 " A tree like view for symbols in Neovim using the Language Server Protocol. Supports all your favourite languages.
 " https://github.com/simrat39/symbols-outline.nvim
 lua require("symbols-outline").setup()
+
+"  Neovim plugin for GitHub Copilot
+" https://github.com/github/copilot.vim
+lua require("copilot_config")

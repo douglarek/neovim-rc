@@ -3,7 +3,7 @@ vim.o.timeoutlen = 300
 local wk = require("which-key")
 wk.setup {}
 wk.register({
-  ["<leader>l"] = {
+      ["<leader>l"] = {
     name = "+lsp",
     r = { "<cmd>lua vim.lsp.buf.rename()<CR>", "rename identities" },
     o = { "<cmd>SymbolsOutline<CR>", "show code outline" },
@@ -11,7 +11,7 @@ wk.register({
 })
 
 wk.register({
-  ["<leader>f"] = {
+      ["<leader>f"] = {
     name = "+tree",
     o = { "<cmd>NvimTreeOpen<CR>", "open" },
     t = { "<cmd>NvimTreeToggle<CR>", "toggle" },
@@ -20,7 +20,7 @@ wk.register({
 })
 
 wk.register({
-  ["<leader>s"] = {
+      ["<leader>s"] = {
     name = "+telescope",
     s = { "<cmd>Telescope current_buffer_fuzzy_find<CR>", "live fuzzy search inside of the currently open buffer" },
     f = { "<cmd>Telescope find_files<CR>", "find files" },
@@ -31,7 +31,7 @@ wk.register({
 })
 
 wk.register({
-  ["<leader>j"] = {
+      ["<leader>j"] = {
     name = "+hop",
     w = { "<cmd>HopWord<CR>", "hop word" },
     l = { "<cmd>HopLine<CR>", "hop line" },
@@ -39,7 +39,7 @@ wk.register({
 })
 
 wk.register({
-  ["<leader>t"] = {
+      ["<leader>t"] = {
     name = "+term",
     t = { "<cmd>ToggleTerm<CR>", "toggle terminal" },
   },
