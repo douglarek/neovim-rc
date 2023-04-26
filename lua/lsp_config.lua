@@ -63,6 +63,13 @@ nvim_lsp.clangd.setup {
   on_attach = on_attach,
 }
 
+-- https://github.com/golang/tools/blob/master/gopls/doc/vim.md#neovim-imports
+vim.api.nvim_create_autocmd('BufWritePre', {
+  pattern = '*.go',
+  callback = function()
+    vim.lsp.buf.code_action({ context = { only = { 'source.organizeImports' } }, apply = true })
+  end
+})
 vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format(nil, 3000)]]
 -- vim.cmd [[autocmd BufWritePre *.go lua vim.lsp.buf.code_action({ source = { organizeImports = true } })]]
 
