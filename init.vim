@@ -31,14 +31,14 @@ Plug 'lewis6991/gitsigns.nvim'
 Plug 'folke/which-key.nvim'
 
 Plug 'mfussenegger/nvim-dap'
-Plug 'olexsmir/gopher.nvim'
 Plug 'simrat39/rust-tools.nvim'
 Plug 'simrat39/symbols-outline.nvim'
 
 Plug 'folke/neodev.nvim'
 
-Plug 'aduros/ai.vim'
 Plug 'github/copilot.vim'
+
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 call plug#end()
 
 let g:loaded_ruby_provider = 0
@@ -86,14 +86,15 @@ set mouse=a
 " https://github.com/folke/which-key.nvim
 lua require("which-key_config")
 
-" Neovim plugin for make golang development easiest
-" https://github.com/olexsmir/gopher.nvim
-lua require("gopher").setup()
-
 " A tree like view for symbols in Neovim using the Language Server Protocol. Supports all your favourite languages.
 " https://github.com/simrat39/symbols-outline.nvim
 lua require("symbols-outline").setup()
 
-"  Neovim plugin for GitHub Copilot
+" Neovim plugin for GitHub Copilot
 " https://github.com/github/copilot.vim
 lua require("copilot_config")
+
+" Go development plugin for Vim
+" https://github.com/fatih/vim-go
+lua require("vim-go_config")
+
