@@ -1,4 +1,5 @@
 colorscheme torte
+set clipboard+=unnamedplus
 set cursorline
 
 call plug#begin()
