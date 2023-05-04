@@ -15,6 +15,9 @@ end
 local luasnip = require("luasnip")
 local cmp = require 'cmp'
 require("luasnip.loaders.from_vscode").lazy_load()
+-- above line is needed to load snippets from rafamadriz/friendly-snippets,
+-- otherwise it will only load snippets from paths specified in the following line
+require("luasnip.loaders.from_vscode").lazy_load({ paths = { vim.fn.stdpath('config') .. '/snippets' } })
 cmp.setup({
   snippet = {
     expand = function(args)
