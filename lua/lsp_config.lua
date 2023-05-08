@@ -67,9 +67,9 @@ nvim_lsp.clangd.setup {
 vim.api.nvim_create_autocmd('BufWritePre', {
   pattern = '*',
   callback = function()
-    --    if vim.bo.filetype == 'go' then
-    --      vim.lsp.buf.code_action({ context = { only = { 'source.organizeImports' } }, apply = true })
-    --    end
+    if vim.bo.filetype == 'go' then
+      vim.lsp.buf.code_action({ context = { only = { 'source.organizeImports' } }, apply = true })
+    end
     vim.lsp.buf.format()
   end
 })
